@@ -2,10 +2,10 @@ const sharedConfig = {
   client: "sqlite3",
   useNullAsDefault: true,
   migrations: {
-    directory: __dirname + "/data/migrations",
+    directory: "./data/migrations",
   },
   seeds: {
-    directory: __dirname + "/data/seeds",
+    directory: "./data/seeds",
   },
   pool: {
     afterCreate: (conn, done) => {
@@ -17,10 +17,10 @@ const sharedConfig = {
 module.exports = {
   development: {
     ...sharedConfig,
-    connection: { filename: __dirname + "/data/database.db3" },
+    connection: { filename: "./data/database.db3" },
   },
   testing: {
     ...sharedConfig,
-    connection: { filename: __dirname + "/data/testing.db3" },
+    connection: { filename: "./data/testing.db3" },
   },
 };
